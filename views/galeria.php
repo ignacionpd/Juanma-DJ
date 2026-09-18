@@ -101,9 +101,9 @@ if (session_status() == PHP_SESSION_NONE) {
                             </a>
                         </li>
                         <li>
-                            <a href="mailto:juanmadj@gmail.com" target="_blank">
+                            <a href="mailto:juanmprieto@gmail.com" target="_blank">
                                 <img class="iconos" src="../assets/iconos/email.svg" alt="correo Juanma Dj" width="94" height="32">
-                                <span>juanmadj@gmail.com</span>
+                                <span>juanmprieto@gmail.com</span>
                             </a>
                         </li>
                         <li>

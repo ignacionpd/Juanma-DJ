@@ -107,7 +107,7 @@ $old = getFlash('old') ?? [];
                             <div class="flex_row">
                                 <img src="../assets/iconos/email.svg" alt="correo Juanma DJ">
                                 <span>Email:</span>
-                                <a href="mailto:juanmadj@gmail.com">juanmadj@gmail.com</a>
+                                <a href="mailto:juanmprieto@gmail.com">juanmprieto@gmail.com</a>
                             </div>
                             <div class="flex_row">
                                 <img src="../assets/iconos/location.svg" alt="ubicacion Juanma DJ">
@@ -195,9 +195,9 @@ $old = getFlash('old') ?? [];
                             </a>
                         </li>
                         <li>
-                            <a href="mailto:juanmadj@gmail.com" target="_blank">
+                            <a href="mailto:juanmprieto@gmail.com" target="_blank">
                                 <img class="iconos" src="../assets/iconos/email.svg" alt="correo Juanma Dj" width="94" height="32">
-                                <span>juanmadj@gmail.com</span>
+                                <span>juanmprieto@gmail.com</span>
                             </a>
                         </li>
                         <li>
