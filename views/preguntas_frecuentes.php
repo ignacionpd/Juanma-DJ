@@ -12,7 +12,9 @@ if (session_status() == PHP_SESSION_NONE) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Grupo CREAR SRL</title>
+    <title>Preguntas frecuentes | Juanma DJ</title>
+    <meta name="description" content="Preguntas frecuentes sobre los servicios de Juanma DJ.">
+    <!--<link rel="canonical" href="https://TU-DOMINIO.com/views/preguntas_frecuentes.php">-->
     <!-- CSS -->
     <link rel="stylesheet" href="../assets/css/estilos.css">
     <!-- FAVICON -->

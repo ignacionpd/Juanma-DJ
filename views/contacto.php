@@ -16,7 +16,9 @@ $old = getFlash('old') ?? [];
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Juanma DJ</title>
+    <title>Contacto | Juanma DJ</title>
+    <meta name="description" content="Página de contacto de Juanma DJ.">
+    <!--<link rel="canonical" href="https://TU-DOMINIO.com/views/contacto.php">-->
     <!-- CSS -->
     <link rel="stylesheet" href="../assets/css/estilos.css">
     <!-- FAVICON -->

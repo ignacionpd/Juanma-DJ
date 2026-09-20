@@ -1,7 +1,13 @@
 <?php
-# Vinculamos los archivos necesarios
-require_once 'db_conn.php';
-require_once 'db_functions.php';
+# Incluir/vincular los parámetros de conexión a Gmail y la librería PHPMailer
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+
+require __DIR__ . '/PHPMailer/src/Exception.php';
+require __DIR__ . '/PHPMailer/src/PHPMailer.php';
+require __DIR__ . '/PHPMailer/src/SMTP.php';
+
+# Vinculamos los archivos necesarios para las validaciones de los datos ingresados por el usuario
 require_once __DIR__ . '/../config/config.php';
 require_once __DIR__ . '/validations/v_inputData.php';
 require_once __DIR__ . '/flash.php';
@@ -61,17 +67,91 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['contactarse'])) {
         $mail->Username = 'juanmprieto@gmail.com';
 
         // Contraseña de aplicación
-        $mail->Password = 'abcdefghijklmnop';
+        $mail->Password = 'eyjjuwfvxovcfppl';
 
         // Seguridad TLS
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
 
         // Puerto SMTP
         $mail->Port = 587;
-    } catch (Exception $e) {
 
-        # SI durante el proceso surge una excepción    
-        echo "Error: " . $mail->ErrorInfo;
+        // =====================================
+        // REMITENTE Y DESTINATARIO
+        // =====================================
+
+        $mail->setFrom(
+            $email,
+            'Formulario de contacto'
+        );
+
+        $mail->addAddress(
+            'juanmprieto@gmail.com'
+        );
+
+        // =====================================
+        // RESPONDER AL USUARIO
+        // =====================================
+
+        $mail->addReplyTo(
+            $email,
+            $nombre
+        );
+
+        // =====================================
+        // CONTENIDO DEL CORREO
+        // =====================================
+
+        $mail->isHTML(true);
+
+        $mail->Subject = "Formulario de contacto - $nombre $apellido";
+
+        $mail->Body = "
+            <h2>Nueva solicitud de contacto</h2>
+
+            <p>
+                <strong>Nombre:</strong> $nombre
+            </p>
+            <p>
+                <strong>Apellido:</strong> $apellido
+            </p>
+            <p>
+                <strong>Teléfono:</strong> $telefono
+            </p>
+            <p>
+                <strong>Dirección:</strong> $direccion
+            </p>
+            <p>
+                <strong>Email:</strong> $email
+            </p>
+
+            <p>
+                <strong>Asunto:</strong> 'Formulario de contacto - $nombre $apellido'
+            </p>
+
+            <hr>
+
+            <p>
+                <strong>Mensaje:</strong>
+            </p>
+
+            <p>
+                $texto
+            </p>
+        ";
+
+
+        // =====================================
+        // ENVIAR
+        // =====================================
+
+        $mail->send();
+
+        # Configuramos un mensaje de éxito para el usuario y le redirigimos a la página de registro.
+        $_SESSION['mensaje_exito'] = "EXITO: La solcitud de contacto se ha enviado correctamente";
+        header("Location: ../views/contacto.php?mensaje=ok");
+        exit();
+
+    } catch (Exception $e) {
         # Registramos la excepción en el error_log
         error_log("Error en c_contacto.php" . $e->getMessage());
         # Redirigimos al usuario a la página de error 500
@@ -83,11 +163,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['contactarse'])) {
         # Cerramos la consulta si aún sigue abierta
         if (isset($insert_stmt_solicitud_contacto) && ($insert_stmt_solicitud_contacto)) {
             $insert_stmt_solicitud_contacto->close();
-        }
-
-        # Cerramos la conexión a la base de datos si aún sigue abierta
-        if (isset($mysqli_connection) && ($mysqli_connection)) {
-            $mysqli_connection->close();
         }
     }
 }
