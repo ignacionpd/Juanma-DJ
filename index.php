@@ -15,8 +15,8 @@ if (session_status() == PHP_SESSION_NONE) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inicio | Juanma DJ</title>
     <meta
-    name="description"
-    content="Presentación de Juanma DJ, DJ argentino afincado en Alicante, con experiencia musicalizando eventos tanto en Argentina como en España. Acompaño celebraciones como casamientos, bautizos, cumpleaños, fiestas privadas y todo tipo de eventos sociales, adaptando siempre la música al estilo y a la energía de cada celebración.">
+        name="description"
+        content="Presentación de Juanma DJ, DJ argentino afincado en Alicante, con experiencia musicalizando eventos tanto en Argentina como en España. Acompaño celebraciones como casamientos, bautizos, cumpleaños, fiestas privadas y todo tipo de eventos sociales, adaptando siempre la música al estilo y a la energía de cada celebración.">
     <!--<link rel="canonical" href="https://TU-DOMINIO.com/index.php">-->
 
     <!-- CSS -->
@@ -33,41 +33,29 @@ if (session_status() == PHP_SESSION_NONE) {
         <!-- HEADER -->
         <header class="mi_encabezado">
 
-            <!-- CABECERA -->
             <div class="cabecera">
-                <img class="cabecera_titulo" src="./assets/images/cabecera/cabecera_completaa.png" alt="imagen Juanma DJ">
+
+                <h1 class="efecto_inicial_titulos">JUANMA DJ</h1>
+
+                <img
+                    class="cabecera_logo"
+                    src="./assets/images/cabecera/cabecera_logo.png"
+                    alt="Juanma DJ">
+
+                <img
+                    class="cabecera_foto"
+                    src="./assets/images/cabecera/cabecera_foto.png"
+                    alt="Juanma DJ">
+
             </div>
 
             <!-- NAVBAR -->
             <nav class="navigationBar">
-
-                <?php if (isset($_SESSION["user_data"])): ?>
-                    <input type="checkbox" id="check_menu" class="check_menu">
-                <?php endif; ?>
-
                 <ul class="navigationBarList">
                     <li><a class="enlace active" href="#">Inicio</a></li>
                     <li><a class="enlace" href="./views/galeria.php">Galería</a></li>
                     <li><a class="enlace" href="./views/preguntas_frecuentes.php">Preguntas</a></li>
                     <li><a class="enlace" href="./views/contacto.php">Contacto</a></li>
-
-                    <?php if (isset($_SESSION["user_data"])): ?>
-                        <li>
-                            <label for="check_menu" class="label_check">
-                                <img src="./assets/iconos/menu.svg" alt="Menú">
-                            </label>
-                        </li>
-                    <?php endif; ?>
-                </ul>
-
-                <?php if (isset($_SESSION["user_data"])): ?>
-
-                    <ul class="navigationBarListUser">
-                        <li><a class="enlace" href="./views/user/solicitudes.php">Solicitudes</a></li>
-                        <li><a class="enlace" href="./views/user/perfil.php">Perfil</a></li>
-                        <li><a class="enlace" href="./controllers/logout.php">Cerrar sesión</a></li>
-                    </ul>
-                <?php endif; ?>
             </nav>
         </header>
 
@@ -78,13 +66,14 @@ if (session_status() == PHP_SESSION_NONE) {
 
                 <div class="video-wrap">
                     <video autoplay loop muted playsinline class="bg-video">
-                        <source src="./assets/videos/playa.mp4" type="video/mp4">
+                        <source src="./assets/videos/playa.webm" type="video/webm">
+                        <source src="./assets/videos/playa-optimizado.mp4" type="video/mp4">
                     </video>
                     <div class="overlay"></div>
                 </div>
 
                 <div class="hero-content">
-                    <h2>Presentación</h2>
+                    <h2 class="efecto_inicial_titulos">Presentación</h2>
                     <div class="contenedor_presentacion">
                         <div>
                             <img src="./assets/images/presentación.jpeg" alt="Juanma DJ">
@@ -94,7 +83,7 @@ if (session_status() == PHP_SESSION_NONE) {
 
                             <p>A lo largo de los años he tenido el placer de poner música para invitados de <b>distintas nacionalidades</b> — españoles, polacos, italianos, franceses, latinoamericanos, entre otras — creando ambientes donde todos se sientan parte de la fiesta.</p>
 
-                            <p>Actualmente participo en eventos en distintos espacios de Alicante, principalmente en celebraciones en el <b>Hotel Meliá</b>, además de trabajar junto a equipos de organización como <b><a class="enlace_presentacion" href="https://sonidoalicante.com/" target="_blank">Sunloud Events</a></b> y <b><a class="enlace_presentacion" href="https://ignacionpd.github.io/solcitoseventos/" target="_blank">Solcitos Eventos</a></b>, ofreciendo propuestas completas de música y animación para celebraciones inolvidables.</p>
+                            <p>Actualmente participo en eventos en distintos espacios de Alicante, principalmente en celebraciones en el <b>Hotel Meliá</b>, además de trabajar junto a equipos de organización como <b><a class="enlace_presentacion" href="https://sonidoalicante.com/" target="_blank">Sunloud Events</a></b>, <b><a class="enlace_presentacion" href="https://sileproducciones.com/" target="_blank">Sile Producciones</a></b> y <b><a class="enlace_presentacion" href="https://ignacionpd.github.io/solcitoseventos/" target="_blank">Solcitos Eventos</a></b>, ofreciendo propuestas completas de música y animación para celebraciones inolvidables.</p>
 
                             <p>Mi objetivo es simple: que cada evento tenga su propia identidad y que la música haga que todos quieran salir a la pista.</p>
 
@@ -107,11 +96,6 @@ if (session_status() == PHP_SESSION_NONE) {
                 <div class="carousel-container">
 
                     <div class="carousel-fade">
-
-                        <div class="carousel-slide active">
-                            <img src="./assets/images/1.jpeg" alt="imagen Juanma DJ">
-                        </div>
-
                         <div class="carousel-slide">
                             <img src="./assets/images/2.jpeg" alt="imagen Juanma DJ">
                         </div>
@@ -129,12 +113,23 @@ if (session_status() == PHP_SESSION_NONE) {
                         </div>
 
                         <div class="carousel-slide">
-                            <img src="./assets/images/6.jpeg" alt="imagen Juanma DJ">
+                            <img src="./assets/images/8.jpeg" alt="imagen Juanma DJ">
                         </div>
                         <div class="carousel-slide">
-                            <img src="./assets/images/7.jpeg" alt="imagen Juanma DJ">
+                            <img src="./assets/images/9.jpg" alt="imagen Juanma DJ">
                         </div>
-
+                        <div class="carousel-slide">
+                            <img src="./assets/images/10.jpg" alt="imagen Juanma DJ">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="./assets/images/11.jpeg" alt="imagen Juanma DJ">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="./assets/images/12.jpg" alt="imagen Juanma DJ">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="./assets/images/13.jpg" alt="imagen Juanma DJ">
+                        </div>
                         <!-- Flechas -->
                         <button class="carousel-btn prev">&#10094;</button>
                         <button class="carousel-btn next">&#10095;</button>
@@ -142,20 +137,76 @@ if (session_status() == PHP_SESSION_NONE) {
                     </div>
 
                 </div>
+
             </section>
-            
+
+            <section class="container-video-enlaces">
+                <h2 class="efecto_horizontal">Empresas y marcas colaboradoras</h2>
+                <div>
+                    <div class="enlaces efecto_vertical">
+                        <img src="./assets/images/logos_clientes/melia_alicante.png" alt="Hotel Meliá Alicante con Juanma DJ">
+                        <img src="./assets/images/logos_clientes/sunloud.png" alt="Sunloud Eventos con Juanma DJ">
+                        <img src="./assets/images/logos_clientes/sile.png" alt="Sile Producciones con Juanma DJ">
+                        <img src="./assets/images/logos_clientes/solcitos.png" alt="Solcitos Eventos con Juanma DJ">
+                        <img src="./assets/images/logos_clientes/78_sabores.png" alt="78 Sabores y Copas Calpe con Juanma DJ">
+                        <img src="./assets/images/logos_clientes/abrazo_beach.jpg" alt="Abrazo Beach Urbanova con Juanma DJ">
+                    </div>
+                    <div class="videos">
+
+                        <div class="video-wrapper videos-efectos">
+
+                            <video id="videoCalpe" autoplay muted loop playsinline>
+                                <source src="./assets/videos/calpe.webm" type="video/webm">
+                                <source src="./assets/videos/calpe-optimizado.mp4" type="video/mp4">
+                            </video>
+
+                            <button class="btn-sonido" type="button">
+                                🔇 Activar sonido
+                            </button>
+
+                        </div>
+
+                        <div class="video-wrapper videos-efectos">
+
+                            <video id="videoAbrazo" autoplay muted loop playsinline>
+                                <source src="./assets/videos/video2.mp4" type="video/mp4">
+                            </video>
+
+                            <button class="btn-sonido" type="button">
+                                🔇 Activar sonido
+                            </button>
+
+                        </div>
+
+                        <div class="video-wrapper videos-efectos">
+
+                            <video id="videoCasamiento" autoplay muted loop playsinline>
+                                <source src="./assets/videos/video5.mp4" type="video/mp4">
+                            </video>
+
+                            <button class="btn-sonido" type="button">
+                                🔇 Activar sonido
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+            </section>
+
             <!-- FLYERS -->
             <section class="section_border_top">
-                <h2>Promociones y flyers</h2>
+                <h2 class="efecto_horizontal">Promociones y flyers</h2>
                 <div class="contenedor_flyers efecto_vertical">
                     <a href="./views/contacto.php"><img src="./assets/images/flyer.jpeg" alt="flyer Juanma DJ"></a>
                     <a href="./views/contacto.php"><img src="./assets/images/flyer2.jpeg" alt="flyer Juanma DJ"></a>
                 </div>
             </section>
-            
+
 
             <!-- RESEÑAS -->
-<!--             <section class="reviews-section">
+            <!--             <section class="reviews-section">
                 <h2 class="reviews-title">Reseñas en Google</h2>
 
                 <div class="reviews-container">
@@ -227,26 +278,26 @@ if (session_status() == PHP_SESSION_NONE) {
                 <div class="contacto_pie">
                     <ul>
                         <li>
-                            <a href="https://wa.me/662650963" target="_blank">
-                                <img class="iconos" src="./assets/iconos/whatsapp-green.svg" alt="correo Juanma Dj" width="94" height="32">
-                                <span>662650963</span>
+                            <a href="https://wa.me/+34662650963" target="_blank">
+                                <img class="iconos" src="./assets/iconos/whatsapp-green.svg" alt="Teléfono Juanma Dj" width="94" height="32">
+                                <span>(+34) 662650963</span>
                             </a>
                         </li>
                         <li>
                             <a href="https://instagram.com/juanma.dj" target="_blank">
-                                <img class="iconos" src="./assets/iconos/instagram.svg" alt="correo Juanma Dj" width="94" height="32">
+                                <img class="iconos" src="./assets/iconos/instagram.svg" alt="Instagram Juanma Dj" width="94" height="32">
                                 <span>juanma.dj</span>
                             </a>
                         </li>
                         <li>
-                            <a href="mailto:juanmprieto@gmail.com" target="_blank">
-                                <img class="iconos" src="./assets/iconos/email.svg" alt="correo Juanma Dj" width="94" height="32">
-                                <span>juanmprieto@gmail.com</span>
+                            <a href="mailto:juanmmprieto@gmail.com" target="_blank">
+                                <img class="iconos" src="./assets/iconos/email.svg" alt="Email Juanma Dj" width="94" height="32">
+                                <span>juanmmprieto@gmail.com</span>
                             </a>
                         </li>
                         <li>
                             <a href="https://www.google.ru/maps/@38.3433424,-0.4892534,15z?entry=ttu&g_ep=EgoyMDI2MDMxMS4wIKXMDSoASAFQAw%3D%3D" target="_blank">
-                                <img class="iconos" src="./assets/iconos/location.svg" alt="ubicación Juanma Dj" width="94" height="32">
+                                <img class="iconos" src="./assets/iconos/location.svg" alt="Ubicación Juanma Dj" width="94" height="32">
                                 <span>Alicante</span>
                             </a>
                         </li>
@@ -256,7 +307,7 @@ if (session_status() == PHP_SESSION_NONE) {
 
                 <!-- LOGO Juanma DJ -->
                 <div class="logo_pie">
-                    <img src="./assets/images/cabecera/cabecera_logo.png" alt="logo Juanma DJ">
+                    <img src="./assets/images/cabecera/cabecera_logo.png" alt="Logo de Juanma DJ">
                 </div>
 
                 <!-- AVISO LEGAL COPYRIGHT -->
@@ -275,6 +326,7 @@ if (session_status() == PHP_SESSION_NONE) {
 
     <script src="./assets/scripts/carousel.js"></script>
     <script src="./assets/scripts/efectos.js"></script>
+    <script src="./assets/scripts/videos.js"></script>
     <script src="./assets/scripts/resenas.js"></script>
 </body>
 

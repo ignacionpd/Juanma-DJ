@@ -1,0 +1,98 @@
+[23-Sep-2026 15:38:10 Europe/Berlin] SERVER -> CLIENT: 220 smtp.gmail.com ESMTP 5b1f17b1804b1-49fe0c446e1sm49973865e9.2 - gsmtp
+
+[23-Sep-2026 15:38:10 Europe/Berlin] CLIENT -> SERVER: EHLO localhost
+
+[23-Sep-2026 15:38:10 Europe/Berlin] SERVER -> CLIENT: 250-smtp.gmail.com at your service, [82.159.239.47]
+250-SIZE 35882577
+250-8BITMIME
+250-STARTTLS
+250-ENHANCEDSTATUSCODES
+250-PIPELINING
+250-CHUNKING
+250 SMTPUTF8
+
+[23-Sep-2026 15:38:10 Europe/Berlin] CLIENT -> SERVER: STARTTLS
+
+[23-Sep-2026 15:38:10 Europe/Berlin] SERVER -> CLIENT: 220 2.0.0 Ready to start TLS
+
+[23-Sep-2026 15:38:10 Europe/Berlin] CLIENT -> SERVER: EHLO localhost
+
+[23-Sep-2026 15:38:10 Europe/Berlin] SERVER -> CLIENT: 250-smtp.gmail.com at your service, [82.159.239.47]
+250-SIZE 35882577
+250-8BITMIME
+250-AUTH LOGIN PLAIN XOAUTH2 PLAIN-CLIENTTOKEN OAUTHBEARER XOAUTH
+250-ENHANCEDSTATUSCODES
+250-PIPELINING
+250-CHUNKING
+250 SMTPUTF8
+
+[23-Sep-2026 15:38:10 Europe/Berlin] CLIENT -> SERVER: AUTH LOGIN
+
+[23-Sep-2026 15:38:10 Europe/Berlin] SERVER -> CLIENT: 334 VXNlcm5hbWU6
+
+[23-Sep-2026 15:38:10 Europe/Berlin] CLIENT -> SERVER: [credentials hidden]
+[23-Sep-2026 15:38:10 Europe/Berlin] SERVER -> CLIENT: 334 UGFzc3dvcmQ6
+
+[23-Sep-2026 15:38:10 Europe/Berlin] CLIENT -> SERVER: [credentials hidden]
+[23-Sep-2026 15:38:11 Europe/Berlin] SERVER -> CLIENT: 535-5.7.8 Username and Password not accepted. For more information, go to
+535 5.7.8  https://support.google.com/mail/?p=BadCredentials 5b1f17b1804b1-49fe0c446e1sm49973865e9.2 - gsmtp
+
+[23-Sep-2026 15:38:11 Europe/Berlin] SMTP ERROR: Password command failed: 535-5.7.8 Username and Password not accepted. For more information, go to
+535 5.7.8  https://support.google.com/mail/?p=BadCredentials 5b1f17b1804b1-49fe0c446e1sm49973865e9.2 - gsmtp
+
+[23-Sep-2026 15:38:11 Europe/Berlin] SMTP Error: Could not authenticate.
+[23-Sep-2026 15:38:11 Europe/Berlin] CLIENT -> SERVER: QUIT
+
+[23-Sep-2026 15:38:11 Europe/Berlin] SERVER -> CLIENT: 
+[23-Sep-2026 15:38:11 Europe/Berlin] SMTP ERROR: QUIT command failed: 
+[23-Sep-2026 15:38:11 Europe/Berlin] SMTP Error: Could not authenticate.
+[23-Sep-2026 15:38:11 Europe/Berlin] Error en contacto.php: SMTP Error: Could not authenticate. | ErrorInfo: SMTP Error: Could not authenticate. SMTP server error: QUIT command failed
+[23-Sep-2026 16:22:54 Europe/Berlin] SERVER -> CLIENT: 220 smtp.gmail.com ESMTP 5b1f17b1804b1-49fe0c3731fsm61239295e9.2 - gsmtp
+
+[23-Sep-2026 16:22:54 Europe/Berlin] CLIENT -> SERVER: EHLO localhost
+
+[23-Sep-2026 16:22:54 Europe/Berlin] SERVER -> CLIENT: 250-smtp.gmail.com at your service, [82.159.239.47]
+250-SIZE 35882577
+250-8BITMIME
+250-STARTTLS
+250-ENHANCEDSTATUSCODES
+250-PIPELINING
+250-CHUNKING
+250 SMTPUTF8
+
+[23-Sep-2026 16:22:54 Europe/Berlin] CLIENT -> SERVER: STARTTLS
+
+[23-Sep-2026 16:22:54 Europe/Berlin] SERVER -> CLIENT: 220 2.0.0 Ready to start TLS
+
+[23-Sep-2026 16:22:55 Europe/Berlin] CLIENT -> SERVER: EHLO localhost
+
+[23-Sep-2026 16:22:55 Europe/Berlin] SERVER -> CLIENT: 250-smtp.gmail.com at your service, [82.159.239.47]
+250-SIZE 35882577
+250-8BITMIME
+250-AUTH LOGIN PLAIN XOAUTH2 PLAIN-CLIENTTOKEN OAUTHBEARER XOAUTH
+250-ENHANCEDSTATUSCODES
+250-PIPELINING
+250-CHUNKING
+250 SMTPUTF8
+
+[23-Sep-2026 16:22:55 Europe/Berlin] CLIENT -> SERVER: AUTH LOGIN
+
+[23-Sep-2026 16:22:55 Europe/Berlin] SERVER -> CLIENT: 334 VXNlcm5hbWU6
+
+[23-Sep-2026 16:22:55 Europe/Berlin] CLIENT -> SERVER: [credentials hidden]
+[23-Sep-2026 16:22:55 Europe/Berlin] SERVER -> CLIENT: 334 UGFzc3dvcmQ6
+
+[23-Sep-2026 16:22:55 Europe/Berlin] CLIENT -> SERVER: [credentials hidden]
+[23-Sep-2026 16:22:55 Europe/Berlin] SERVER -> CLIENT: 535-5.7.8 Username and Password not accepted. For more information, go to
+535 5.7.8  https://support.google.com/mail/?p=BadCredentials 5b1f17b1804b1-49fe0c3731fsm61239295e9.2 - gsmtp
+
+[23-Sep-2026 16:22:55 Europe/Berlin] SMTP ERROR: Password command failed: 535-5.7.8 Username and Password not accepted. For more information, go to
+535 5.7.8  https://support.google.com/mail/?p=BadCredentials 5b1f17b1804b1-49fe0c3731fsm61239295e9.2 - gsmtp
+
+[23-Sep-2026 16:22:55 Europe/Berlin] SMTP Error: Could not authenticate.
+[23-Sep-2026 16:22:55 Europe/Berlin] CLIENT -> SERVER: QUIT
+
+[23-Sep-2026 16:22:55 Europe/Berlin] SERVER -> CLIENT: 
+[23-Sep-2026 16:22:55 Europe/Berlin] SMTP ERROR: QUIT command failed: 
+[23-Sep-2026 16:22:55 Europe/Berlin] SMTP Error: Could not authenticate.
+[23-Sep-2026 16:22:55 Europe/Berlin] Error en contacto.php: SMTP Error: Could not authenticate. | ErrorInfo: SMTP Error: Could not authenticate. SMTP server error: QUIT command failed

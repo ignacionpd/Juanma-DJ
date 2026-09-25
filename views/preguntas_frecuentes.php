@@ -31,40 +31,26 @@ if (session_status() == PHP_SESSION_NONE) {
 
             <!-- CABECERA -->
             <div class="cabecera">
-                <img class="cabecera_titulo" src="../assets/images/cabecera/cabecera_completaa.png" alt="imagen Juanma DJ">
+                
+                <h1 class="efecto_inicial_titulos">JUANMA DJ</h1>
+
+                <img
+                    class="cabecera_logo"
+                    src="../assets/images/cabecera/cabecera_logo.png"
+                    alt="Logo Juanma DJ">
+                <img
+                    class="cabecera_foto"
+                    src="../assets/images/cabecera/cabecera_foto.png"
+                    alt="Foto de Juanma DJ">
             </div>
 
             <nav class="navigationBar">
-
-                <?php if (isset($_SESSION["user_data"])): ?>
-                    <input type="checkbox" id="check_menu" class="check_menu">
-                <?php endif; ?>
-
                 <ul class="navigationBarList">
                     <li><a class="enlace" href="../index.php">Inicio</a></li>
                     <li><a class="enlace" href="./galeria.php">Galería</a></li>
                     <li><a class="enlace active" href="#">Preguntas</a></li>
                     <li><a class="enlace" href="./contacto.php">Contacto</a></li>
-                    
-                    <?php if (isset($_SESSION["user_data"])): ?>
-                        <li>
-                            <label for="check_menu" class="label_check">
-                                <img src="../assets/iconos/menu.svg" alt="Menú">
-                            </label>
-                        </li>
-                    <?php endif; ?>
                 </ul>
-
-                <?php if (isset($_SESSION["user_data"])): ?>
-
-                    <ul class="navigationBarListUser">
-                        <li><a class="enlace" href="./user/solicitudes.php">Solicitudes</a></li>
-                        <li><a class="enlace" href="./user/usuarios.php">Usuarios</a></li>
-                        <li><a class="enlace" href="./user/empleados.php">Empleados</a></li>
-                        <li><a class="enlace" href="./user/perfil.php">Perfil</a></li>
-                        <li><a class="enlace" href="../controllers/logout.php">Cerrar sesión</a></li>
-                    </ul>
-                <?php endif; ?>
             </nav>
         </header>
         <!-- CUERPO PRINCIPAL-->
@@ -72,7 +58,7 @@ if (session_status() == PHP_SESSION_NONE) {
             
                 <!-- CABECERA FAQ (STICKY) -->
                 <div class="faq-header">
-                    <h2>Preguntas frecuentes</h2>
+                    <h2 class="efecto_inicial_titulos">Preguntas frecuentes</h2>
                     <details class="faq-dropdown">
                         <summary>Ver todas las preguntas</summary>
                         <nav class="faq-nav">
@@ -118,26 +104,26 @@ if (session_status() == PHP_SESSION_NONE) {
                 <div class="contacto_pie">
                     <ul>
                         <li>
-                            <a href="https://wa.me/662650963" target="_blank">
-                                <img class="iconos" src="../assets/iconos/whatsapp-green.svg" alt="correo Juanma Dj" width="94" height="32">
-                                <span>662650963</span>
+                            <a href="https://wa.me/+34662650963" target="_blank">
+                                <img class="iconos" src="../assets/iconos/whatsapp-green.svg" alt="Teléfono de Juanma Dj" width="94" height="32">
+                                <span>(+34) 662650963</span>
                             </a>
                         </li>
                         <li>
                             <a href="https://instagram.com/juanma.dj" target="_blank">
-                                <img class="iconos" src="../assets/iconos/instagram.svg" alt="correo Juanma Dj" width="94" height="32">
+                                <img class="iconos" src="../assets/iconos/instagram.svg" alt="Instagram de Juanma Dj" width="94" height="32">
                                 <span>juanma.dj</span>
                             </a>
                         </li>
                         <li>
-                            <a href="mailto:juanmprieto@gmail.com" target="_blank">
-                                <img class="iconos" src="../assets/iconos/email.svg" alt="correo Juanma Dj" width="94" height="32">
-                                <span>juanmprieto@gmail.com</span>
+                            <a href="mailto:juanmmprieto@gmail.com" target="_blank">
+                                <img class="iconos" src="../assets/iconos/email.svg" alt="Email de Juanma Dj" width="94" height="32">
+                                <span>juanmmprieto@gmail.com</span>
                             </a>
                         </li>
                         <li>
                             <a href="https://www.google.ru/maps/@38.3433424,-0.4892534,15z?entry=ttu&g_ep=EgoyMDI2MDMxMS4wIKXMDSoASAFQAw%3D%3D" target="_blank">
-                                <img class="iconos" src="../assets/iconos/location.svg" alt="ubicación Juanma Dj" width="94" height="32">
+                                <img class="iconos" src="../assets/iconos/location.svg" alt="Ubicación Juanma Dj" width="94" height="32">
                                 <span>Alicante</span>
                             </a>
                         </li>
@@ -146,7 +132,7 @@ if (session_status() == PHP_SESSION_NONE) {
 
                 <!-- LOGO Juanma DJ -->
                 <div class="logo_pie">
-                    <img src="../assets/images/cabecera/cabecera_logo.png" alt="logo Juanma DJ">
+                    <img src="../assets/images/cabecera/cabecera_logo.png" alt="Logo de Juanma DJ">
                 </div>
 
                 <!-- AVISO LEGAL COPYRIGHT -->

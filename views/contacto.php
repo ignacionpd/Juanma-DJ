@@ -17,7 +17,7 @@ $old = getFlash('old') ?? [];
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contacto | Juanma DJ</title>
-    <meta name="description" content="Página de contacto de Juanma DJ.">
+    <meta name="description" content="Página de contacto de Juanma DJ">
     <!--<link rel="canonical" href="https://TU-DOMINIO.com/views/contacto.php">-->
     <!-- CSS -->
     <link rel="stylesheet" href="../assets/css/estilos.css">
@@ -35,44 +35,31 @@ $old = getFlash('old') ?? [];
 
             <!-- CABECERA -->
             <div class="cabecera">
-                <img class="cabecera_titulo" src="../assets/images/cabecera/cabecera_completaa.png" alt="imagen Juanma DJ">
+                <h1 class="efecto_inicial_titulos">JUANMA DJ</h1>
+
+                <img
+                    class="cabecera_logo"
+                    src="../assets/images/cabecera/cabecera_logo.png"
+                    alt="Logo de Juanma DJ">
+                <img
+                    class="cabecera_foto"
+                    src="../assets/images/cabecera/cabecera_foto.png"
+                    alt="Foto de Juanma DJ">
             </div>
 
             <nav class="navigationBar">
-
-                <?php if (isset($_SESSION["user_data"])): ?>
-                    <input type="checkbox" id="check_menu" class="check_menu">
-                <?php endif; ?>
-
                 <ul class="navigationBarList">
                     <li><a class="enlace" href="../index.php">Inicio</a></li>
                     <li><a class="enlace" href="./galeria.php">Galería</a></li>
                     <li><a class="enlace" href="./preguntas_frecuentes.php">Preguntas</a></li>
-                    <li><a class="enlace" href="./contacto.php">Contacto</a></li>
-
-                    <?php if (isset($_SESSION["user_data"])): ?>
-                        <li>
-                            <label for="check_menu" class="label_check">
-                                <img src="../assets/iconos/menu.svg" alt="Menú">
-                            </label>
-                        </li>
-                    <?php endif; ?>
-                </ul>
-
-                <?php if (isset($_SESSION["user_data"])): ?>
-
-                    <ul class="navigationBarListUser">
-                        <li><a class="enlace" href="./user/solicitudes.php">Solicitudes</a></li>
-                        <li><a class="enlace" href="./user/perfil.php">Perfil</a></li>
-                        <li><a class="enlace" href="../controllers/logout.php">Cerrar sesión</a></li>
-                    </ul>
-                <?php endif; ?>
+                    <li><a class="enlace active" href="./contacto.php">Contacto</a></li>
             </nav>
         </header>
+        
         <!-- CUERPO PRINCIPAL-->
         <main class="mi_principal_fondo fondo_contacto">
 
-            <h2>Contacto</h2>
+            <h2 class="efecto_inicial_titulos">Contacto</h2>
             <div class="aviso_registro">
                 <?php
                 # Comprobar si hay mensajes de error
@@ -102,17 +89,17 @@ $old = getFlash('old') ?? [];
 
                         <div class="datos_contacto">
                             <div class="flex_row">
-                                <img src="../assets/iconos/whatsapp-green.svg" alt="telefono Juanma DJ">
+                                <img src="../assets/iconos/whatsapp-green.svg" alt="Teléfono Juanma DJ">
                                 <span>Teléfono:</span>
-                                <a href="https://wa.me/662650963" target="_blank">662650963</a>
+                                <a href="https://wa.me/+34662650963" target="_blank">(+34) 662650963</a>
                             </div>
                             <div class="flex_row">
-                                <img src="../assets/iconos/email.svg" alt="correo Juanma DJ">
+                                <img src="../assets/iconos/email.svg" alt="Email Juanma DJ">
                                 <span>Email:</span>
-                                <a href="mailto:juanmprieto@gmail.com">juanmprieto@gmail.com</a>
+                                <a href="mailto:juanmmprieto@gmail.com">juanmmprieto@gmail.com</a>
                             </div>
                             <div class="flex_row">
-                                <img src="../assets/iconos/location.svg" alt="ubicacion Juanma DJ">
+                                <img src="../assets/iconos/location.svg" alt="Ubicaciónn Juanma DJ">
                                 <span>Ubicación:</span>
                                 <a href="https://www.google.ru/maps/@38.3433424,-0.4892534,15z?entry=ttu&g_ep=EgoyMDI2MDMxMS4wIKXMDSoASAFQAw%3D%3D" target="_blank">Alicante - Comunidad Valenciana</a>
                             </div>
@@ -164,7 +151,14 @@ $old = getFlash('old') ?? [];
                                     <small class="input_error"></small>
                                 </div>
                             </div>
-
+                            <div class="politicas">
+                                <input type="checkbox" id="privacidad" name="privacidad"  value="1" class="check" required>
+                                <div class="input_zone">
+                                    <span>Acepto las <a href="./politicas_de_privacidad.html" class="check_link" target="_blank">políticas de privacidad.</a></span>
+                                    <small class="input_error"></small>
+                                </div>
+                            </div>
+                            
                             <div class="form_buttons">
                                 <input type="reset" class="btn_reset" value="Borrar">
                                 <input type="submit" class="btn_enviar" name="contactarse" value="Enviar">
@@ -185,26 +179,26 @@ $old = getFlash('old') ?? [];
                 <div class="contacto_pie">
                     <ul>
                         <li>
-                            <a href="https://wa.me/662650963" target="_blank">
-                                <img class="iconos" src="../assets/iconos/whatsapp-green.svg" alt="correo Juanma Dj" width="94" height="32">
-                                <span>662650963</span>
+                            <a href="https://wa.me/+34662650963" target="_blank">
+                                <img class="iconos" src="../assets/iconos/whatsapp-green.svg" alt="Teléfono de Juanma Dj" width="94" height="32">
+                                <span>(+34) 662650963</span>
                             </a>
                         </li>
                         <li>
                             <a href="https://instagram.com/juanma.dj" target="_blank">
-                                <img class="iconos" src="../assets/iconos/instagram.svg" alt="correo Juanma Dj" width="94" height="32">
+                                <img class="iconos" src="../assets/iconos/instagram.svg" alt="Instagram de Juanma Dj" width="94" height="32">
                                 <span>juanma.dj</span>
                             </a>
                         </li>
                         <li>
-                            <a href="mailto:juanmprieto@gmail.com" target="_blank">
-                                <img class="iconos" src="../assets/iconos/email.svg" alt="correo Juanma Dj" width="94" height="32">
-                                <span>juanmprieto@gmail.com</span>
+                            <a href="mailto:juanmmprieto@gmail.com" target="_blank">
+                                <img class="iconos" src="../assets/iconos/email.svg" alt="Email Juanma Dj" width="94" height="32">
+                                <span>juanmmprieto@gmail.com</span>
                             </a>
                         </li>
                         <li>
                             <a href="https://www.google.ru/maps/@38.3433424,-0.4892534,15z?entry=ttu&g_ep=EgoyMDI2MDMxMS4wIKXMDSoASAFQAw%3D%3D" target="_blank">
-                                <img class="iconos" src="../assets/iconos/location.svg" alt="ubicación Juanma Dj" width="94" height="32">
+                                <img class="iconos" src="../assets/iconos/location.svg" alt="Ubicación Juanma Dj" width="94" height="32">
                                 <span>Alicante</span>
                             </a>
                         </li>
@@ -213,7 +207,7 @@ $old = getFlash('old') ?? [];
 
                 <!-- LOGO Juanma DJ -->
                 <div class="logo_pie">
-                    <img src="../assets/images/cabecera/cabecera_logo.png" alt="logo Juanma DJ">
+                    <img src="../assets/images/cabecera/cabecera_logo.png" alt="Logo de Juanma DJ">
                 </div>
 
                 <!-- AVISO LEGAL COPYRIGHT -->
