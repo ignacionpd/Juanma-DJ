@@ -1464,10 +1464,13 @@ h3 {
     border-radius: 8px;
     display: flex;
     cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .btn_contactar:hover {
     background: #e21776;
+    transform: scale(1.03);
+
 }
 
 .btn_contactar a {
