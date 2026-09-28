@@ -110,6 +110,17 @@ if (contacto_form) {
             alert('Por favor, complete correctamente los campos obligatorios');
         }
     });
+
+    contacto_form.addEventListener('reset', function (e) {
+        document.querySelectorAll('.input_error').forEach(function (smallElement) {
+            smallElement.textContent = '';
+            smallElement.classList.remove('error-visible');
+        });
+
+        document.querySelectorAll('.input-error').forEach(function (inputElement) {
+            inputElement.classList.remove('input-error');
+        });
+    });
 }
 
 validateOnBlur(inputName, validateName);
