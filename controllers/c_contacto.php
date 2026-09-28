@@ -60,6 +60,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['contactarse'])) {
     }
 
     $mail = new PHPMailer(true);
+    $cfg = require __DIR__ . '/config.php';
 
     try {
 
@@ -67,28 +68,28 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['contactarse'])) {
         $mail->isSMTP();
 
         // Servidor SMTP de Gmail
-        $mail->Host = 'smtp.gmail.com';
+        $mail->Host = $cfg['smtp_host'];
 
         // Activar autenticación SMTP
         $mail->SMTPAuth = true;
 
         // Cuenta de Gmail autenticada
-        $mail->Username = 'juanmmprieto@gmail.com';
+        $mail->Username = $cfg['smtp_user'];
 
         // Nueva contraseña de aplicación
-        $mail->Password = 'qmztthgqisymujon';
+        $mail->Password = $cfg['smtp_pass'];
 
         // Seguridad TLS
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
 
         // Puerto SMTP
-        $mail->Port = 587;
+        $mail->Port = $cfg['smtp_port'];
 
         $mail->CharSet = 'UTF-8';
 
         // El remitente debe coincidir con la cuenta autenticada
         $mail->setFrom(
-            $mail->Username,
+            $cfg['smtp_user'],
             'Formulario de contacto'
         );
 
