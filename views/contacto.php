@@ -1,6 +1,7 @@
 <?php
 require_once __DIR__ . '/../config/config.php';
 require_once __DIR__ . '/../controllers/flash.php';
+require __DIR__ . '/../controllers/sesion.php';
 
 # Comprobar si existe una sesión activa y en caso de que no así la crearemos
 if (session_status() == PHP_SESSION_NONE) {
