@@ -370,6 +370,13 @@ h3 {
     width: 100%;
 }
 
+.contenedor_footer_legal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
 .iconos {
     margin-right: 10px;
     width: 24px;
@@ -1534,6 +1541,47 @@ h3 {
 .form_group .input_zone textarea {
     height: 60px;
 }
+
+/* Páginas legales */
+.legal {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    max-width: 46rem;
+}
+
+.legal h2 {
+    margin-top: 2.5rem
+}
+
+.legal ul li a,
+.legal p a{
+    color: white;
+    text-decoration: underline;
+}
+
+.legal table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+    overflow-wrap: anywhere
+}
+
+.legal th,
+.legal td {
+    border: 1px solid white;
+    padding: .5rem .6rem;
+    text-align: left;
+    vertical-align: top;
+    color: white;
+}
+
+.legal p,
+.legal li {
+    max-width: none;
+    color: white;
+}
+
 
 
 @media (max-width: 1200px) {
