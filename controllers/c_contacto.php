@@ -94,7 +94,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['contactarse'])) {
         );
 
         // Destinatario
-        $mail->addAddress('juanmmprieto@gmail.com');
+        $mail->addAddress($cfg['to_email']);
 
         // Permite responder directamente al usuario
         $mail->addReplyTo(
