@@ -1,0 +1,28 @@
+name: Desplegar en InfinityFree
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Obtener el código
+        uses: actions/checkout@v4
+
+      - name: Publicar archivos en InfinityFree
+        env:
+          FTP_HOST: ${{ secrets.INFINITYFREE_FTP_HOST }}
+          FTP_USERNAME: ${{ secrets.INFINITYFREE_FTP_USERNAME }}
+          FTP_PASSWORD: ${{ secrets.INFINITYFREE_FTP_PASSWORD }}
+          FTP_REMOTE_DIR: ${{ secrets.INFINITYFREE_REMOTE_DIR }}
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y lftp
+          lftp -c "set ftp:ssl-force false; set ftp:ssl-protect-data false; set net:max-retries 2; open -u $FTP_USERNAME,$FTP_PASSWORD $FTP_HOST; mirror --reverse --only-newer --no-perms --verbose --exclude=^\\.git/ --exclude=^\\.github/ --exclude=^controllers/config\\.php$ --exclude=^controllers/contacto-errors\\.log$ ./ $FTP_REMOTE_DIR"

@@ -1,3 +1,5 @@
 .vscode/
+
+# Configuración local y registros que deben conservarse solo en el servidor.
 /controllers/config.php
 /controllers/contacto-errors.log
