@@ -36,7 +36,8 @@ jobs:
             --exclude=^\.gitignore$ \
             --exclude=^\.gitattributes$ \
             --exclude=^specs/ \
-            --exclude=^README\.(md|MD)$ \
+            --exclude=^README\.md$ \
+            --exclude=^README\.MD$ \
             --exclude=^CLAUDE\.md$ \
             --exclude=^MEMORY\.md$ \
             --exclude=^controllers/config\.php$ \
