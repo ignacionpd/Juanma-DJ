@@ -20,9 +20,27 @@ jobs:
         env:
           FTP_HOST: ${{ secrets.INFINITYFREE_FTP_HOST }}
           FTP_USERNAME: ${{ secrets.INFINITYFREE_FTP_USERNAME }}
-          FTP_PASSWORD: ${{ secrets.INFINITYFREE_FTP_PASSWORD }}
+          # La contraseña va en LFTP_PASSWORD y se lee con --env-password: así no aparece en la línea de comandos
+          LFTP_PASSWORD: ${{ secrets.INFINITYFREE_FTP_PASSWORD }}
           FTP_REMOTE_DIR: ${{ secrets.INFINITYFREE_REMOTE_DIR }}
         run: |
           sudo apt-get update
           sudo apt-get install -y lftp
-          lftp -c "set ftp:ssl-force false; set ftp:ssl-protect-data false; set net:max-retries 2; open -u $FTP_USERNAME,$FTP_PASSWORD $FTP_HOST; mirror --reverse --transfer-all --no-perms --verbose --exclude=^\\.git/ --exclude=^\\.github/ --exclude=^controllers/config\\.php$ --exclude=^controllers/contacto-errors\\.log$ ./ $FTP_REMOTE_DIR"
+          lftp --env-password -u "$FTP_USERNAME" "$FTP_HOST" <<LFTP
+          set ftp:ssl-force false
+          set ftp:ssl-protect-data false
+          set net:max-retries 2
+          mirror --reverse --transfer-all --no-perms --verbose \
+            --exclude=^\.git/ \
+            --exclude=^\.github/ \
+            --exclude=^\.gitignore$ \
+            --exclude=^\.gitattributes$ \
+            --exclude=^specs/ \
+            --exclude=^README\.(md|MD)$ \
+            --exclude=^CLAUDE\.md$ \
+            --exclude=^MEMORY\.md$ \
+            --exclude=^controllers/config\.php$ \
+            --exclude=^controllers/contacto-errors\.log$ \
+            ./ "$FTP_REMOTE_DIR"
+          bye
+          LFTP
