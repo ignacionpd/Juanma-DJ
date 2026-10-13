@@ -309,6 +309,9 @@ if (session_status() == PHP_SESSION_NONE) {
                 <!-- LOGO Juanma DJ -->
                 <div class="logo_pie">
                     <img src="./assets/images/cabecera/cabecera_logo.png" alt="Logo de Juanma DJ">
+                    <div class="footer__derechos">
+                        <small class="aviso_legal">&copy; Todos los derechos reservados</small>
+                    </div>
                 </div>
 
                 <!-- AVISO LEGAL COPYRIGHT -->
@@ -319,7 +322,13 @@ if (session_status() == PHP_SESSION_NONE) {
                         <li><a href="./views/contacto.php">Contacto</a></li>
                         <li><a href="./views/preguntas.php">Preguntas</a></li>
                     </ul>
-                    <small class="aviso_legal">&copy; Todos los derechos reservados</small>
+
+                    <div class="footer__derechos">
+                        <a href="https://iprieto.freedev.app" target="_blank" rel="noopener" class="footer__credito" aria-label="Diseñado por Ignacio Prieto (se abre en una pestaña nueva)">
+                            Diseñado por <img src="./assets/images/ip-logo.svg" alt="Ignacio Prieto">
+                        </a>
+                    </div>
+
                 </div>
             </div>
         </footer>

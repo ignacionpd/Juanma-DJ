@@ -176,18 +176,18 @@ $old = getFlash('old') ?? [];
 
             <div class="contenedor_footer">
 
-                <!-- TELEFONO, IG y CORREO -->
+                <!-- TELEFONOS Y CORREO -->
                 <div class="contacto_pie">
                     <ul>
                         <li>
                             <a href="https://wa.me/+34662650963" target="_blank">
-                                <img class="iconos" src="../assets/iconos/whatsapp-green.svg" alt="Teléfono de Juanma Dj" width="94" height="32">
+                                <img class="iconos" src="../assets/iconos/whatsapp-green.svg" alt="Teléfono Juanma Dj" width="94" height="32">
                                 <span>(+34) 662650963</span>
                             </a>
                         </li>
                         <li>
                             <a href="https://instagram.com/juanma.dj" target="_blank">
-                                <img class="iconos" src="../assets/iconos/instagram.svg" alt="Instagram de Juanma Dj" width="94" height="32">
+                                <img class="iconos" src="../assets/iconos/instagram.svg" alt="Instagram Juanma Dj" width="94" height="32">
                                 <span>juanma.dj</span>
                             </a>
                         </li>
@@ -204,27 +204,34 @@ $old = getFlash('old') ?? [];
                             </a>
                         </li>
                     </ul>
+
                 </div>
 
                 <!-- LOGO Juanma DJ -->
                 <div class="logo_pie">
                     <img src="../assets/images/cabecera/cabecera_logo.png" alt="Logo de Juanma DJ">
+                    <div class="footer__derechos">
+                        <small class="aviso_legal">&copy; Todos los derechos reservados</small>
+                    </div>
                 </div>
 
                 <!-- AVISO LEGAL COPYRIGHT -->
                 <div class="contacto_pie_nav">
-                    <div class="contacto_flex_row">
-                        <ul>
-                            <li><a href="../index.php">Inicio</a></li>
-                            <li><a href="./galeria.php">Galería</a></li>
-                            <li><a href="./contacto.php">Contacto</a></li>
-                            <li><a href="./preguntas.php">Preguntas</a></li>
-                        </ul>
+                    <ul>
+                        <li><a href="../index.php">Inicio</a></li>
+                        <li><a href="./galeria.php">Galería</a></li>
+                        <li><a href="./contacto.php">Contacto</a></li>
+                        <li><a href="./preguntas.php">Preguntas</a></li>
+                    </ul>
+
+                    <div class="footer__derechos">
+                        <a href="https://iprieto.freedev.app" target="_blank" rel="noopener" class="footer__credito" aria-label="Diseñado por Ignacio Prieto (se abre en una pestaña nueva)">
+                            Diseñado por <img src="../assets/images/ip-logo.svg" alt="Ignacio Prieto">
+                        </a>
                     </div>
-                    <small class="aviso_legal">&copy; Todos los derechos reservados</small>
+
                 </div>
             </div>
-
         </footer>
 
     </div>
