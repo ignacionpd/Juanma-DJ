@@ -130,3 +130,34 @@ validateOnBlur(inputEmail, validateEmail);
 validateOnBlur(inputText, validateText);
 validateOnBlur(privacidad, validatePrivacy);
 
+/***** RESETEAR FORMULARIO Y ESTILOS DE ERROR *****/
+document.addEventListener("DOMContentLoaded", function () {
+
+    const forms = document.querySelectorAll("form");
+
+    forms.forEach(form => {
+
+        form.addEventListener("reset", function () {
+
+            // Esperamos un micro-tick para que el reset limpie valores primero
+            setTimeout(() => {
+
+                const inputs = form.querySelectorAll(".input-error");
+                const smalls = form.querySelectorAll(".error-visible");
+
+                inputs.forEach(input => {
+                    input.classList.remove("input-error");
+                });
+
+                smalls.forEach(small => {
+                    small.classList.remove("error-visible");
+                    small.textContent = "";
+                });
+
+            }, 0);
+
+        });
+
+    });
+
+});
